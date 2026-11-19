@@ -166,9 +166,9 @@ body {
 
 .style::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: url("../images/TimBerton3.jpg") no-repeat center/cover fixed;
+  background: url("../images/TimBerton3.jpg") no-repeat center/cover;
   z-index: -1;
   filter: brightness(0.2);
 
@@ -287,9 +287,9 @@ body {
 
 .legacy::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: url("../images/Alise.jpg") no-repeat center/cover fixed;
+  background: url("../images/Alise.jpg") no-repeat center/cover;
   z-index: -1;
   filter: brightness(0.2);
 }
