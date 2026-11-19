@@ -115,7 +115,6 @@ body {
   row-gap: 25px;
   position: relative;
   padding-block: calc(var(--height-header) + 50px) 50px;
-  min-height: 100dvh;
 }
 
 .biography::before {
