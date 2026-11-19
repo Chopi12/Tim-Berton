@@ -162,6 +162,7 @@ body {
   row-gap: 25px;
   position: relative;
   padding-block: 50px;
+  clip-path: inset(0);
 }
 
 .style::before {
@@ -169,7 +170,7 @@ body {
   position: fixed;
   inset: 0;
   background: url("../images/TimBerton3.jpg") no-repeat center/cover;
-  z-index: -1;
+  z-index: -2;
   filter: brightness(0.2);
 
 }
@@ -205,6 +206,20 @@ body {
   font-style: italic;
   padding-left: 15px;
   line-height: 25px;
+}
+
+.style-image {
+  width: 90%;
+  height: auto;
+  border-radius: 20px;
+
+  animation: swaying 8s ease-in-out infinite;
+  margin-top: 30px;
+}
+
+.style-image:hover {
+  animation-play-state: paused;
+  box-shadow: 0 0 25px #620202;
 }
 
 .style-actors-list {
@@ -283,14 +298,15 @@ body {
   row-gap: 25px;
   position: relative;
   padding-block: 50px;
+  clip-path: inset(0);
 }
 
-.legacy::before {
+.legacy::after {
   content: "";
   position: fixed;
   inset: 0;
   background: url("../images/Alise.jpg") no-repeat center/cover;
-  z-index: -1;
+  z-index: -2;
   filter: brightness(0.2);
 }
 
