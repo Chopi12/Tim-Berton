@@ -1,0 +1,554 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --height-header: 85px;
+  --contain-padding: 15px;
+}
+
+*,
+*::after,
+*::before {
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: white;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #6b0101;
+  animation: flicker 10s infinite;
+}
+
+.contain {
+  max-width: calc(1440px + (var(--contain-padding) * 2));
+  padding-inline: var(--contain-padding);
+}
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  z-index: 1000;
+  background-color: rgb(0 0 0 / 0.5);
+  backdrop-filter: blur(10px);
+
+  min-height: var(--height-header);
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  white-space: nowrap;
+}
+
+.header-title,
+.footer-title {
+  font-size: 46px;
+  font-weight: bold;
+  color: #6c0101;
+  animation: flicker 5s infinite;
+}
+
+.header-quote,
+.footer-quote {
+  font-style: italic;
+  font-size: 14px;
+  color: grey;
+}
+
+.header-right-list {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.header-right-link {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.header-right-link:hover {
+  color: #6b0101;
+}
+
+.button-menu {
+  display: none;
+  cursor: pointer;
+  animation: flicker 5s infinite;
+}
+
+.button-burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  color: #6b0101;
+}
+
+.button-burger:hover {
+  color: #656565;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: currentColor;
+}
+
+.biography {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
+  position: relative;
+  padding-block: calc(var(--height-header) + 50px) 50px;
+  min-height: 100dvh;
+}
+
+.biography::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/TimBerton2.jpg") no-repeat center/cover;
+  z-index: -1;
+  filter: brightness(0.15);
+}
+
+.biography-image {
+  max-height: 150px;
+  height: 100%;
+  width: auto;
+  float: right;
+  border-radius: 10px;
+  margin-left: 8px;
+  animation: levitate 4s ease-in-out infinite;
+}
+
+.biography-image:hover {
+  animation-play-state: paused;
+  box-shadow: 0 0 25px #620202;
+}
+
+.biography-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.biography-text:not(:first-child) {
+  margin-top: 20px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.style {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
+  position: relative;
+  padding-block: 50px;
+}
+
+.style::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/TimBerton3.jpg") no-repeat center/cover fixed;
+  z-index: -1;
+  filter: brightness(0.2);
+
+}
+
+.style-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.style-top {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  text-align: center;
+}
+
+.style-description {
+  font-size: 14px;
+  font-weight: 500;
+  color: #88acef;
+}
+
+.style-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  list-style: arabic;
+  padding-left: 20px;
+}
+
+.style-item {
+  font-style: italic;
+  padding-left: 15px;
+  line-height: 25px;
+}
+
+.style-actors-list {
+  padding-left: 50px;
+  list-style: disc;
+
+}
+
+.medium {
+  font-size: 16px;
+  position: relative;
+}
+
+.works {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
+  position: relative;
+  padding-block: 50px;
+}
+
+.works::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/WednesdayGirl.jpg") no-repeat center/cover;
+  z-index: -1;
+  filter: brightness(0.2);
+}
+
+.works-table {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.works-table-head {
+  text-transform: uppercase;
+  color: #88acef;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #6b0101;
+}
+
+.works-table-cell {
+  padding: 15px 10px;
+  font-weight: bold;
+}
+
+.works-table-year {
+  width: max-content;
+  white-space: nowrap;
+  color: #88acef;
+}
+
+.works-table-title {
+  width: 30%;
+}
+
+.works-table-text {
+  line-height: 25px;
+  font-weight: 300;
+}
+
+.works-table-row {
+  border-bottom: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.works-table-row:hover {
+  background-color: rgb(107 1 1 / 0.4);
+  border-color: rgb(107 1 1);
+}
+
+.legacy {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
+  position: relative;
+  padding-block: 50px;
+}
+
+.legacy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/Alise.jpg") no-repeat center/cover fixed;
+  z-index: -1;
+  filter: brightness(0.2);
+}
+
+.legacy-hint {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: grey;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+
+.legacy-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-inline: 20px;
+}
+
+.legacy-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  border-block: 1px solid #6b0101;
+  background-color: rgb(0 0 0 / 0.1);
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  animation: swaying 4s ease-in-out infinite;
+}
+
+.legacy-item:nth-child(2n) {
+  animation: swaying 4s ease-in-out infinite reverse 1s;
+}
+
+.legacy-item:hover {
+  background-color: rgb(107 1 1 / 0.1);
+  animation-play-state: paused;
+  z-index: 900;
+  box-shadow: 0 0 25px #620202;
+}
+
+.legacy-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #88acef;
+}
+
+.legacy-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.legacy-cite {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  padding: 30px;
+  background-color: rgb(0 0 0 / 0.9);
+  border-top: 2px solid #6b0101;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.footer-right-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-right-link {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-right-link:hover {
+  color: #6b0101;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  padding-top: 20px;
+  text-align: center;
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.footer-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: grey;
+}
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes flicker {
+  0%, 22%, 25%, 46%, 57%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgb(108 1 1 / 0.9);
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+}
+
+@keyframes swaying {
+  0%, 50%, 100% {
+    transform: translateX(30px) rotate(3deg);
+  }
+  25%, 75% {
+    transform: translateX(-30px) rotate(-3deg);
+  }
+}
+
+
+@media (max-width: 750px) {
+
+  .header-right {
+    display: none;
+  }
+
+  .button-menu {
+    display: flex;
+  }
+
+  .biography-image {
+    max-height: 125px;
+    margin-left: 2px;
+  }
+
+  .works-table {
+    font-size: 12px;
+  }
+
+  .works-table-cell {
+    padding: 5px;
+  }
+
+  .style-item,
+  .style-actors-item {
+    font-size: 12px;
+  }
+
+  .legacy-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-right-list {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 494px) {
+  .header-left {
+    row-gap: 5px;
+  }
+
+  .header-title {
+    font-size: 36px;
+  }
+
+  .header-quote {
+    font-size: 12px;
+  }
+
+  .biography-image {
+    max-height: 100px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .bold {
+    font-size: 16px;
+  }
+
+  .medium {
+    font-size: 14px;
+  }
+
+  .legacy-subtitle {
+    font-size: 18px;
+  }
+
+  .style-actors-list {
+    padding-left: 25px;
+  }
+
+  .footer {
+    padding: 15px 10px;
+  }
+
+  .footer-title {
+    font-size: 30px;
+  }
+
+  .footer-quote {
+    font-size: 12px;
+  }
+}
